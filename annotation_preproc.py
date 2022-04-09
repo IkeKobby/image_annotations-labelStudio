@@ -62,11 +62,11 @@ def updateAnnotations(image_directory,
         segmentation, bbox = annotation_data.loc[i, 'segmentation'], annotation_data.loc[i, 'bbox']
         segmentation = np.array(segmentation).reshape((-1, 2))
         # get scaling 
-        scale_x = newSize[0] / image.shape[1]
-        scale_y = newSize[1] / image.shape[0]
+        scale_x = newImageSize[0] / image.shape[1]
+        scale_y = newImageSize[1] / image.shape[0]
 
         # resize
-        image = cv2.resize(image, (newSize[0], newSize[1]))
+        image = cv2.resize(image, (newImageSize[0], newImageSize[1]))
 
         # get the bounding box
         xmin, ymin, xmax, ymax = bbox[0], bbox[1], bbox[2], bbox[3]
