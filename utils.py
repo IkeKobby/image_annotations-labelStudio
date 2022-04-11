@@ -39,7 +39,6 @@ def data_augmentation_training(image, mask, width=256, height=256):
                             A.IAAPerspective(p=0.5),
                             A.OneOf([
                                     A.Blur(blur_limit=3, p=0.5),
-                                    A.ColorJitter(p=0.5),
                                 ], p=1.0),
                             A.OneOf([
                                     A.CLAHE(p=1),
