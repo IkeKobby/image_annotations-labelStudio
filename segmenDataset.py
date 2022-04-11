@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 from torch.utils.data import Dataset
-from data.utils import get_mask
+from utils import get_mask
 
 
 class segmentationDataset(Dataset):
