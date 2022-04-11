@@ -1,5 +1,6 @@
 
 import numpy as np
+import matplotlib.pyplot as plt
 import albumentations as A
 from albumentations.pytorch.transforms import ToTensorV2
 import cv2
@@ -78,3 +79,28 @@ def data_augmentation_validation(image, mask, width=256, height=256):
     image = transformed['image']
     mask = transformed['mask']
     return image, mask
+
+
+
+# Preprocess
+def cropping(input_image, scale_percentage = .50, default = True):
+    if default:
+        dim = (324, 324)
+    else:
+        width = int(input_image.shape[1] * scale_percentage)
+        height = int(input_image.shape[0] * scale_percentage)
+        dim = (width, height)
+    return cv2.resize(input_image, dim,)
+
+
+def visualize(**images):
+    """PLot images in one row."""
+    n = len(images)
+    plt.figure(figsize=(16, 5))
+    for i, (name, image) in enumerate(images.items()):
+        plt.subplot(1, n, i + 1)
+        plt.xticks([])
+        plt.yticks([])
+        plt.title(' '.join(name.split('_')).title())
+        plt.imshow(image)
+    plt.show()
