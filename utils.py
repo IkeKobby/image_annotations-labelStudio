@@ -78,7 +78,7 @@ def data_augmentation_validation(image, mask, width=256, height=256):
     transformed = transform(image = image, mask = mask)
     image = transformed['image']
     mask = transformed['mask']
-    return image.float(), mask
+    return image, mask
 
 
 
