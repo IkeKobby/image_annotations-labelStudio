@@ -71,7 +71,8 @@ def data_augmentation_training(image, mask, width=256, height=256):
 def data_augmentation_validation(image, mask, width=256, height=256):
     transform = A.Compose(
         [
-            A.Resize(width=width, height=height)
+            A.Resize(width=width, height=height),
+            ToTensorV2(),
         ]
     )
     transformed = transform(image = image, mask = mask)
