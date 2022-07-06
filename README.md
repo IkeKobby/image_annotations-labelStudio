@@ -40,3 +40,8 @@ A preprocessing function, `annotation_preproc` to help with the annotated images
 
 The notebook `nb.ipynb` contains all the functions and methods used to generate corresponding masks for the images leveraging the `pycocotools` library with the help of the `coco` class method `annotMask`. 
 - `NB`:  Both images and their corresponding masks must have the `name or id`. 
+
+### Model usage
+- After training the model is saved to a folder with different weights saved as hidden files, eg, of a saved weight is as of the form `.00020.data-00000-of-00001` with a config file in the form `_config.json`, a checkpoint file `checkpoint` and a forth file `.00020.index`. Also during training several of `.00020.data-00000-of-00001`, `.00020.index` are saved at each epoch and the model however, finds the last weight, this case, the last weight was on epoch `20`, hence the `.00020`.
+- Loading a model requires all the above files in one directory and then using the `model_from_checkpoint` from the keras-segmentation module; `from keras_segmentation.predict import model_from_checkpoint_path`. The model can be loaded and instantiated for predictions. 
+- Again the  model takes as input, an image and predict its mask. 
