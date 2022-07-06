@@ -48,9 +48,9 @@ The notebook `nb.ipynb` contains all the functions and methods used to generate 
 
 ### Requirement
 - Basically the model requirements are follows; 
-    keras_segmentation==0.3.0
-    numpy==1.22.3
-    streamlit==1.9.2
-    keras-segmentation==0.3.0
-    opencv-python-headless==4.5.5.64
-    tensorflow==2.9.1
+    - keras_segmentation==0.3.0
+    - numpy==1.22.3
+    - streamlit==1.9.2
+    - keras-segmentation==0.3.0
+    - opencv-python-headless==4.5.5.64
+    - tensorflow==2.9.1
