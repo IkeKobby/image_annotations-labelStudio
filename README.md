@@ -37,5 +37,6 @@ A preprocessing function, `annotation_preproc` to help with the annotated images
 - ----Testing Data ---
 - ----------------testing images
 - ----------------testing masks.
+
 The notebook `nb.ipynb` contains all the functions and methods used to generate corresponding masks for the images leveraging the `pycocotools` library with the help of the `coco` class method `annotMask`. 
 - `NB`:  Both images and their corresponding masks must have the `name or id`. 
